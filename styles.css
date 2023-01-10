@@ -1,0 +1,816 @@
+/* ================
+  CSS RESET
+  https://www.joshwcomeau.com/css/custom-css-reset/
+=================*/
+
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+/*
+9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ================
+ROOT COLORS
+=================*/
+
+:root {
+  --main-bg-color: rgba(35, 5, 22, 0.94);
+  --primary-text-color: #fff;
+  --secondary-text-color: #000;
+  --primary-color: #2e294e;
+  --secondary-color: #df2935;
+  --tertiary-color: #2e294e;
+}
+
+/* body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--main-bg-color);
+} */
+
+main {
+  /* max-width: 1400px; */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10%;
+  padding-bottom: 5vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* responsive image */
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* ================
+TYPOGRAPHY
+=================*/
+
+a {
+  transition: 0.2s all ease-out;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+ul,
+ol,
+li {
+  font-family: "Arimo", sans-serif;
+  color: var(--secondary-text-color);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 20%;
+}
+
+h1 {
+  font-family: "Arimo", sans-serif;
+  color: var(--primary-text-color);
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  letter-spacing: 4%;
+  line-height: 160%;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: "Arimo", sans-serif;
+  color: var(--secondary-text-color);
+  font-size: clamp(2.5rem, 4.5vw, 3rem);
+  letter-spacing: 4%;
+  line-height: 140%;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-family: "Arimo", sans-serif;
+  color: var(--secondary-text-color);
+  font-size: clamp(2.2rem, 4.5vw, 2.8rem);
+  letter-spacing: 4%;
+  line-height: 140%;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-family: "Arimo", sans-serif;
+  color: var(--secondary-text-color);
+  font-size: clamp(1.8rem, 4vw, 2rem);
+  letter-spacing: 4%;
+  line-height: 140%;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-family: "Arimo", sans-serif;
+  color: var(--primary-text-color);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+p {
+  font-family: "Arimo", sans-serif;
+  color: var(--secondary-text-color);
+  font-size: clamp(1.3rem, 2.5vw, 1.2rem);
+  line-height: 140%;
+}
+
+button {
+  font-family: "Arimo", sans-serif;
+  color: var(--primary-text-color);
+  font-size: clamp(1rem, 2.5vw, 1rem);
+  line-height: 140%;
+}
+
+/* ================
+NAVIGATION
+=================*/
+
+nav {
+  color: white;
+  margin-top: -10px;
+  background-color: var(--primary-color);
+}
+
+/* wrapper for nav elements */
+.nav-container {
+  display: flex;
+  padding: 15px;
+  padding-bottom: 5px;
+  justify-content: space-between;
+  align-items: center;
+  /* max-width: 1000px; */
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+  min-height: 100px;
+}
+
+/* nav logo */
+.logo {
+  width: 150px;
+  margin-left: 10%;
+  min-width: 100px;
+}
+
+/* wrapper for navigation */
+.navbar {
+  flex-grow: 1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* set all nav lists to not have bullets */
+.navbar * {
+  list-style: none;
+}
+
+/* contains nav items */
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: 10%;
+  flex-wrap: wrap;
+}
+
+/* toggles dropdown */
+.dropdown-toggle {
+  position: relative;
+}
+
+/* submenu dropdown */
+.dropdown {
+  padding: 5px;
+  padding-left: 15px;
+  min-width: 100%;
+  position: absolute;
+  background: #333333;
+  top: 30px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  left: -10000px;
+  visibility: none;
+  z-index: 100;
+}
+
+.dropdown .nav__item {
+  margin-left: 0;
+  margin-bottom: 5px;
+  transition: transform 0.2s ease;
+}
+
+/* add hover effect to submenu items */
+.dropdown .nav__item:hover {
+  transform: translate(0, -2px);
+}
+
+.nav__item {
+  padding: 10px 15px 10px 15px;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+}
+
+.nav__item a {
+  color: var(--primary-text-color);
+}
+
+/* adds underline to nav items */
+.nav__item::after {
+  content: "";
+  transition: width 0.2s ease;
+  width: 0;
+}
+
+/* the single greatest line of code ever written.
+makes an underline effect appear only on the main nav items, not dropdowns */
+/* it would be much cleaner with a class, but this is pretty funny to look at */
+.nav__item:not(.dropdown .nav__item, .dropdown-toggle):hover::after {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 20px;
+  background-color: white;
+  width: calc(100% - 40px);
+  height: 3px;
+}
+
+.nav__item:hover ul {
+  opacity: 1;
+  left: 15px;
+  margin-top: 10px;
+  visibility: visible;
+}
+
+/* shows where the user is */
+.breadcrumbs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+
+.breadcrumbs--alt {
+  background-color: #2e294e;
+}
+
+.breadcrumbs__img {
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.breadcrumbs__title {
+  z-index: 10;
+  margin-top: -60px;
+  width: 500px;
+  padding: 20px;
+  border-top: solid 8px var(--tertiary-color);
+  background-color: #fff;
+  box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.34);
+  -webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.34);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================
+LAYOUTS
+=================*/
+
+/* Create a two column layout */
+.l-grid-container {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  column-gap: 2rem;
+  row-gap: 5em;
+  margin-bottom: 200px;
+}
+
+.padded {
+  margin-top: 180px;
+}
+
+.l-grid__descr {
+  background-color: rgb(235, 235, 235);
+  padding: 50px;
+  max-width: 1200px;
+  margin-bottom: 50px;
+}
+
+.l-grid__img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: 0.2s all ease-out;
+}
+
+/* Add an alt color to container background */
+.l-grid__bg-wrapper {
+  background-color: rgba(211, 211, 211, 0.05);
+}
+
+.l-grid-container__left-panel {
+  margin: 10px;
+}
+
+.l-grid-container__right-panel {
+  margin: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Styles tags for l-grids and places bullet points inside of the background */
+.l-grid-tag {
+  list-style-position: inside;
+  padding: 10px 20px 10px 20px;
+  margin-right: 25px;
+  background-color: #411c31;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.l-grid__img--alt {
+  background-color: #2e294e;
+  max-width: 380px;
+}
+
+/* Break this into two rows on smaller devices */
+@media screen and (max-width: 1200px) {
+  .l-grid-container {
+    margin-top: 0px;
+    grid-template-columns: 1fr;
+    row-gap: 0em !important;
+  }
+  .l-grid__img {
+    margin-bottom: 120px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero {
+    min-height: 90vh;
+  }
+}
+
+/* create a logo grid layout */
+.l-logo-grid {
+  width: 100vw;
+  background-color: var(--tertiary-color);
+  padding: 40px 20px;
+  margin-bottom: 100px;
+}
+
+.l-logo-grid__title {
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* keep logo items at a consistent style and width */
+.l-logo-grid__inner {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+}
+
+.l-logo-grid__item {
+  width: 200px;
+  min-width: 60px;
+  margin: 30px 0%;
+  height: 80px;
+}
+
+/* create a gallery layout */
+.l-logo-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.l-logo-gallery__item {
+  background-color: #2e294e;
+  border-radius: 8px;
+}
+
+.l-image-gallery {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 300px;
+}
+
+.l-image-gallery__item {
+  margin: 20px;
+  max-width: 300px;
+  height: auto;
+  min-width: 200px;
+}
+
+/* ================
+HOME
+=================*/
+
+/* Style front page welcome area */
+.hero {
+  display: flex;
+  min-height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-image: url(./assets/boat.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.hero__inner {
+  z-index: 0;
+  padding: 0px 5% 100px 5%;
+  text-align: center;
+}
+
+/* gray overlay for background */
+.bg-overlay {
+  background-color: #00000050;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__panel {
+  display: flex;
+  align-items: center;
+}
+
+/* featured items */
+.featured {
+  margin-bottom: -400px;
+  display: flex;
+  justify-content: center;
+  padding: 150px 5% 150px 5%;
+}
+
+.featured__card {
+  padding: 20px;
+  border-top: solid 8px var(--tertiary-color);
+  background-color: #fff;
+  z-index: 10;
+  width: 350px;
+  height: 200px;
+  margin: 30px;
+  box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.34);
+  -webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.34);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.featured__card--large {
+  width: 80vw;
+}
+
+.featured__btn {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 10px 24px 10px 24px;
+  border: none;
+  transition: background-color ease-in-out 0.2s;
+  margin-top: 20px;
+  cursor: pointer;
+  max-width: 200px;
+}
+
+.featured__btn:hover {
+  background-color: #af2029;
+}
+
+/* wrap items on smaller screens and change margins and padding */
+@media screen and (max-width: 1200px) {
+  .featured {
+    flex-wrap: wrap;
+    margin-bottom: -150px;
+  }
+  .hero__inner {
+    margin-top: 100px;
+    margin-bottom: -200px;
+  }
+}
+
+/* ================
+BOAT BRANDS
+=================*/
+
+.boat-brands {
+  background-color: #2e294e;
+}
+
+/* ================
+EXHIBITORS
+=================*/
+
+.exhibitors {
+  display: flex;
+  flex-direction: column;
+}
+
+.exhibitor__card {
+  background-color: rgb(235, 235, 235);
+  padding: 50px;
+  max-width: 1200px;
+  margin-bottom: 50px;
+}
+
+.exhibitor__card--alt {
+  background-color: #fff;
+}
+
+/* ================
+CONTACT
+=================*/
+
+/* contact form */
+.contact-form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+  background-color: #3333330a;
+  padding: 40px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Arimo", sans-serif;
+  color: var(--secondary-text-color);
+  font-size: clamp(1.3rem, 2.5vw, 1.2rem);
+  line-height: 140%;
+}
+
+/* reason for contacting us */
+#reason {
+  margin-bottom: 40px;
+}
+
+/* submit button */
+#submit-btn {
+  margin-top: 50px;
+  margin-left: 50%;
+  margin-right: 50%;
+  background: rgb(10, 84, 168);
+  border: none;
+  padding: 8px 30px 8px 30px;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#submit-btn:hover {
+  background: rgb(9, 70, 139);
+}
+
+input {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+textarea {
+  padding: 10px;
+}
+
+.comment-page {
+  align-self: flex-start;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.comment-form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+  background-color: #3333330a;
+  padding: 40px;
+  border-radius: 5px;
+  margin-right: auto;
+  font-family: "Arimo", sans-serif;
+  color: var(--secondary-text-color);
+  font-size: clamp(1.3rem, 2.5vw, 1.2rem);
+  line-height: 140%;
+  width: 100%;
+}
+
+.comment-form #message {
+  width: 100%;
+  max-width: 600px;
+  max-height: 500px;
+}
+
+.comment-form #name {
+  max-width: 300px;
+}
+
+/* ================
+IMAGE LIGHTBOX
+=================*/
+
+/* lightbox container */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000000000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: grayscale(80%);
+  background: #ffffff91;
+  overflow: hidden;
+}
+
+/* lightbox content */
+.lightbox-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* button to close lightbox */
+.close-btn {
+  color: rgb(51, 51, 51);
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+#prev,
+#next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  background-color: var(--primary-color);
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 3px 0 0 3px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+#next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* lower button opacity on hover */
+#prev:hover,
+#next:hover {
+  opacity: 0.8;
+}
+
+.lightbox-img {
+  transition: 0.3s;
+}
+
+.lightbox-img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
